@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería JAVI's</title>
+
+    <link rel="stylesheet" href="hojapanadera.css">
+
+    <link rel="stylesheet"
+    href="zC:\Users\JAVIER 409\Downloads\fondo2.svg">
+</head>
+
+<body>
+
+<header class="encabezado">
+
+    <img src="imagenes/logo.png" alt="Logo Panadería JAVI's" class="logo">
+
+    <h1>Panadería JAVI's</h1>
+
+    <p>
+        Tradición, calidad y sabor en cada pieza de pan.
+    </p>
+
+</header>
+
+<main>
+
+    <div class="tarjeta productos">
+        <h2>Nuestros Productos</h2>
+
+        <p>
+            Descubre nuestra variedad de panes artesanales,
+            pasteles y repostería elaborados con ingredientes
+            frescos y de alta calidad.
+        </p>
+
+        <a href="C:\tabla\tabla.html" class="boton-tabla">
+            Ver Catálogo de Productos
+        </a>
+    </div>
+
+    <h3>Galería de Productos</h3>
+
+    <div class="carrusel">
+
+        <div class="imagenes">
+
+            <img src="C:\Users\PC\Downloads\bolillo.jfif"alt="Pan artesanal">
+
+            <img src="C:\Users\PC\Downloads\bolillo1.jfif" alt="Pasteles">
+
+            <img src="C:\Users\PC\Downloads\bolillo2.jfif" alt="Repostería">
+
+        </div>
+
+    </div>
+
+    <div class="indicadores"></div>
+
+    <section class="info">
+
+        <div class="tarjeta">
+            <h4>Misión</h4>
+            <p>
+                Elaborar productos de panadería y repostería frescos,
+                deliciosos y de alta calidad, utilizando ingredientes
+                seleccionados y brindando una atención amable que
+                satisfaga las necesidades de nuestros clientes.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h4>Visión</h4>
+            <p>
+                Ser una panadería reconocida por la excelencia de
+                nuestros productos, la innovación constante y el
+                compromiso con nuestros clientes.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h4>¿Quiénes Somos?</h4>
+            <p>
+                En Panadería JAVI's somos un negocio dedicado a la
+                elaboración de pan artesanal, pasteles y productos de
+                repostería. Trabajamos con pasión para ofrecer sabores
+                únicos y una experiencia agradable para nuestros
+                clientes.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="ubicacion">
+
+        <h2>📍 Nuestra Ubicación</h2>
+
+        <div class="contenedor-ubicacion">
+
+            <div class="datos-ubicacion">
+
+                <h3>Panadería JAVI's</h3>
+
+                <p><strong>Dirección:</strong> las huertas jilotepec estado de mexico</p>
+
+                <p><strong>Teléfono:</strong> +52 56 1887 6039</p>
+
+                <p><strong>Horario:</strong></p>
+
+                <ul>
+                    <li>Lunes a Viernes: 7:00 AM - 9:00 PM</li>
+                    <li>Sábados: 7:00 AM - 8:00 PM</li>
+                    <li>Domingos: 8:00 AM - 3:00 PM</li>
+                </ul>
+
+            </div>
+
+            <div class="mapa">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d479441.3037802529!2d-100.43852129179744!3d20.14926186972639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d249f445cba37b%3A0xe60d9412921e1596!2zTWluaXN1cGVyIOKAnExhcyBIdWVydGFz4oCd!5e0!3m2!1ses-419!2smx!4v1781789545216!5m2!1ses-419!2smx"
+                 width="600" 
+                 height="450" 
+                 style="border:0;"
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<section class="opinion">
+    <a href="C:\formulario\formulario.html" class="boton-opinion">
+    <button id="btn-opinion">Déjanos tu opinión</button>
+       </a>
+</section>
+
+
+<footer>
+
+<h3>Panadería JAVI's</h3>
+
+<p>Las Huertas, Jilotepec, Estado de México</p>
+
+<p>Teléfono: +52 56 1887 6039</p>
+
+<p>Síguenos en nuestras redes sociales</p>
+
+<div class="redes-sociales">
+
+<a href="https://www.tiktok.com/@javier_djm?_r=1&_t=ZS-97b9WVFasib">TikTok</a>
+
+<a href="https://www.instagram.com/panaderia_javi_s?igsh=dWJtcjFkdmxveXM=">Instagram</a>
+
+<a href="https://wa.me/5618876039">WhatsApp</a>
+
+</div>
+
+<p>© 2025 Panadería JAVI's | Todos los derechos reservados.</p>
+
+</footer>
+
+<script>
+
+let indice = 0;
+
+const imagenes = document.querySelector('.imagenes');
+const totalImagenes = document.querySelectorAll('.imagenes img').length;
+const contenedorIndicadores = document.querySelector('.indicadores');
+
+for(let i = 0; i < totalImagenes; i++){
+
+    const punto = document.createElement('span');
+    punto.classList.add('indicador');
+
+    punto.addEventListener('click', () => {
+        mostrarImagen(i);
+    });
+
+    contenedorIndicadores.appendChild(punto);
+}
+
+function actualizarIndicadores(){
+    document.querySelectorAll('.indicador').forEach((punto, i) => {
+        punto.classList.toggle('activo', i === indice);
+    });
+}
+
+function mostrarImagen(i){
+    indice = i;
+    imagenes.style.transform = `translateX(-${indice * 100}%)`;
+    actualizarIndicadores();
+}
+
+function cambiarImagen(){
+    indice = (indice + 1) % totalImagenes;
+    mostrarImagen(indice);
+}
+
+setInterval(cambiarImagen, 3000);
+mostrarImagen(0);
+
+</script>
+
+</body>
+</html>
